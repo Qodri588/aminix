@@ -1,0 +1,58 @@
+<meta name="msapplication-config" content="/browserconfig.xml"/>
+<title itemprop="name">{{ .Title }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}" />
+<meta name="twitter:title" content="{{ .Title }} - {{ .Site.Title }}" />
+<meta itemprop="name" content="{{ .Title }} - {{ .Site.Title }}" />
+<meta name="application-name" content="{{ .Title }} - {{ .Site.Title }}" />
+<meta property="og:site_name" content="{{ .Title }} - {{ .Site.Title }}"/>
+
+
+	<meta name="description" content="{{ if .Description }}{{ .Description | safeJS }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}"/>
+
+
+
+<meta itemprop="description" content="{{ or ( .Params.description )  ( .Site.Params.description ) }}" />
+<meta property="og:description" content="{{ or ( .Params.description ) ( .Site.Params.description ) }}" />
+<meta name="twitter:description" content="{{ or ( .Params.description ) ( .Site.Params.description ) }}" />
+
+<base href="{{ .Permalink }}">
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" /> 
+<meta name="url" content="{{ .Permalink }}" />
+<meta name="twitter:url" content="{{ .Permalink }}" /> 
+<meta property="og:url" content="{{ .Permalink }}" />
+
+{{ with .Params.image }}
+  <meta itemprop="image" content="{{ . | absURL }}" />
+  <meta property="og:image" content="{{ . | absURL }}" />
+  <meta name="twitter:image" content="{{ . | absURL }}" />
+  <meta name="twitter:image:src" content="{{ . | absURL }}" />
+{{ else }}
+  <meta itemprop="image" content="{{ .Site.Params.ogimage | absURL }}" />
+  <meta property="og:image" content="{{ .Site.Params.ogimage | absURL }}" />
+  <meta name="twitter:image" content="{{ .Site.Params.ogimage | absURL }}" />
+  <meta name="twitter:image:src" content="{{ .Site.Params.ogimage | absURL }}" />
+{{ end }}
+
+<meta property="og:updated_time" content={{ .Lastmod.Format "2006-01-02T15:04:05Z0700" | safeHTML }} />
+
+{{ with .OutputFormats.Get "RSS" }}
+  <link href="{{ .Permalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+  <link href="{{ .Permalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+{{ end }}
+<meta name="robots" content="index,follow" /> 
+<meta name="googlebot" content="index,follow" />
+
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" /> 
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" /> 
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="{{ $.Site.Title }}" /> 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<meta name="apple-touch-fullscreen" content="yes" />
+<link rel="apple-touch-icon" href="{{ "ios/180.png"| absURL }}">
+<link rel="apple-touch-icon" sizes='76x76' href="{{ "ios/76.png" | absURL }}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{ "ios/120.png" | absURL }}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{ "ios/152.png" | absURL }}">

@@ -1,0 +1,13 @@
+{{ if .IsHome }}
+    {{ else }}
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement":
+            [
+                {{ partial "json-ld/BreadcrumList.html" . | safeJS }}
+            ]
+        }
+    </script>
+    {{ end }}

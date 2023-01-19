@@ -1,0 +1,15 @@
+<div class="footer__copyright">©&nbsp;
+	{{- with .Site.Params.copyrightStartYear }}
+		{{- if lt (int .) now.Year }}{{ . }}&ndash;{{ end -}}
+	{{ end -}}
+	{{ now.Format "2006" }} {{ default .Site.Title }}.
+	<span class="footer__copyright-credits">All Rights Reserved</span>
+<div class="menu_footer">
+		<a href="page/privacy">Privacy</a> /
+		<a href="page/about">About</a> /
+		<a href="page/Disclaimer">Disclaimer</a> /
+		<a href="page/contact">Contact</a>
+		
+	</div>
+		
+	</div>

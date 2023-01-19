@@ -1,0 +1,111 @@
+baseURL = "https://qodri588.github.io/amnix/"
+languageCode = "id-id"
+LanguageName = "Indonesia"
+title = "yudisme"
+
+paginate = 4
+author = "Qodri"
+enableEmoji = true
+enableGitInfo = false
+enableRobotsTXT = true
+canonifyURLs = true
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+
+[Params]
+  description = "Kumpulan Resep Yang Wajib Kamu Coba"
+  languageName ="Indonesian"
+  columns = 3
+  ogimage = "/logo.png"
+  logoText = "Amnix" # Logo text, otherwise will use .Site.Title
+  
+  copyright = "Amnix" # Footer copyright holder, otherwise will use .Site.Title
+  copyrightStartYear = 2019 # Footer copyright start year
+  opengraph = false # Enable OpenGraph
+  schema = false # Enable Schema
+  twitterCards = false # Enable Twitter Cards
+  mainSections = ["post"] # Set main page sections
+  dateFormat = "January 02, 2006" # Change the format of dates
+ ## customCSS = ["css/custom.css"] # Include custom CSS files
+ ## customJS = ["js/custom.js"] # Include custom JS files
+  ## comments = true # Enable comments for all site p byages
+  related = true # Enable Related Content (See https://gohugo.io/content-management/related/)
+  mathjax = false # Enable MathJax for all site pages
+  ##mathjaxPath = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js" # Specify MathJax path. Optional
+  ##mathjaxConfig = "TeX-AMS-MML_HTMLorMML" # 
+  
+[Params.Social]
+  github = "https://github.com/mqodri"
+  facebook = "https://facebook.com/mqodri"
+  sitename = "Yudisme"
+  twitter = "@mqodri"
+  
+[Params.Entry]
+  meta = ["date"]
+  share = ["facebook", "twitter", "reddit"]
+  
+[Params.Sidebar]
+  widgets = ["recent", "categories", "tags"]
+  position = "right" # Change sidebar position for all site pages: "right", "left" or false
+  positionHome = "right" # Change sidebar position for home page
+  positionList = "right" # Change sidebar position for list pages
+  positionSingle = "right" # Change sidebar position for single pages
+  
+[Params.Widgets]
+  recentNum = 5 # Set number of articles in the "Recent articles" widget
+  recentDate = true # Show datetime in the "Recent Posts" widget
+  tagsCounter = true # Enable counter for each tag in the "Tags" widget
+
+[Params.Author]
+  name = "Qodri"
+  url = "author/qodri"
+
+[Params.Web]
+	logoURL = "/favicon-32x32.png"
+	organisasiWebName = "Yudisme"
+	copyright = "Yudisme"
+	description = "Tutorial web"
+	appleTouchIcon = ""
+[Params.image]
+  ogimageURL = "/img.png"
+
+
+[Params.Breadcrumb]
+  enable = true # Enable breadcrumb globally
+  homeText = "Amnix" # Home node text
+
+[Params.Featured]
+  previewOnly = true # Show only preview featured image
+
+
+[Params.Manifest] # Web App Manifest config
+  name = "Amnix"
+  shortName = "Amnix"
+  display = "standalone"
+  startUrl = "/"
+  backgroundColor = "#33333a"
+  themeColor = "#5b5b67"
+  description = "Responsive and configurable Hugo theme"
+  orientation = "portrait"
+  scope = "/"
+
+[outputFormats]
+  [outputFormats.MANIFEST] # Add custom MANIFEST output format
+    mediaType = "application/json"
+    baseName = "manifest"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "MANIFEST"] # Include MANIFEST format to home page
+
+[related]
+  includeNewer = true
+  threshold = 80
+  toLower = false
+[[related.indices]]
+  name = 'keywords'
+  weight = 100
+[[related.indices]]
+  name = 'date'
+  weight = 10

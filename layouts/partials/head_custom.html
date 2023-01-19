@@ -1,0 +1,10 @@
+{{ partial "meta.html" . }}
+{{ partial "favicon.html" . }}
+{{ partial "json-ld/web.html" . }}
+{{ partial "json-ld/listSchema.html" . }}
+
+<script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register({{ "/sw.js" | absURL }});
+};
+</script>
